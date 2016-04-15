@@ -56,4 +56,13 @@ describe('Counter component', () => {
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).toHaveBeenCalled()
   })
+
+  it('fourth button should call onIncrement in a second', (done) => {
+    const { buttons, actions } = setup()
+    buttons.at(3).simulate('click')
+    setTimeout(() => {
+      expect(actions.onIncrement).toHaveBeenCalled()
+      done()
+    }, 1000)
+  })
 })
