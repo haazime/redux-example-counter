@@ -9,7 +9,7 @@ function setup(value = 0) {
   }
 
   const component = shallow(
-    <Counter value={value} />
+    <Counter value={value} {...actions} />
   )
 
   return {
