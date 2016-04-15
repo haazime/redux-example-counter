@@ -10,6 +10,8 @@ export default class Counter extends Component {
         <button onClick={onIncrement}>+</button>
         {' '}
         <button onClick={onDecrement}>-</button>
+        {' '}
+        <button>Increment if odd</button>
       </p>
     )
   }

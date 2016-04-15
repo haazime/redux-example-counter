@@ -38,4 +38,10 @@ describe('Counter component', () => {
     buttons.at(1).simulate('click')
     expect(actions.onDecrement).toHaveBeenCalled()
   })
+
+  it('third button should call not call onIncrement if the counter is even', () => {
+    const { buttons, actions } = setup(42)
+    buttons.at(2).simulate('click')
+    expect(actions.onIncrement).toNotHaveBeenCalled()
+  })
 })
