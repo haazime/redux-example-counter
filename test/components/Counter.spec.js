@@ -50,4 +50,10 @@ describe('Counter component', () => {
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).toHaveBeenCalled()
   })
+
+  it('third button should call onIncrement if the counter is odd and negative', () => {
+    const { buttons, actions } = setup(-43)
+    buttons.at(2).simulate('click')
+    expect(actions.onIncrement).toHaveBeenCalled()
+  })
 })
