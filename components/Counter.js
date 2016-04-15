@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'React'
+import React, { Component, PropTypes } from 'react'
 
 class Counter extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Counter extends Component {
     const { value, onIncrement, onDecrement } = this.props
     return (
       <p>
-        Clicked: 0 times
+        Clicked: {value} times
         {' '}
         <button onClick={onIncrement}>
           +

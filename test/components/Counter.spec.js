@@ -27,6 +27,11 @@ describe('Counter component', () => {
     expect(p.text()).toMatch(/^Clicked: 0 times/)
   })
 
+  it('should display count', () => {
+    const { p } = setup(1)
+    expect(p.text()).toMatch(/^Clicked: 1 times/)
+  })
+
   it('first button should call onIncrement', () => {
     const { buttons, actions } = setup()
     buttons.at(0).simulate('click')
