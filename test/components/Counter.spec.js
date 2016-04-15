@@ -39,9 +39,15 @@ describe('Counter component', () => {
     expect(actions.onDecrement).toHaveBeenCalled()
   })
 
-  it('third button should call not call onIncrement if the counter is even', () => {
+  it('third button should not call onIncrement if the counter is even', () => {
     const { buttons, actions } = setup(42)
     buttons.at(2).simulate('click')
     expect(actions.onIncrement).toNotHaveBeenCalled()
+  })
+
+  it('third button should call onIncrement if the counter is odd', () => {
+    const { buttons, actions } = setup(43)
+    buttons.at(2).simulate('click')
+    expect(actions.onIncrement).toHaveBeenCalled()
   })
 })
