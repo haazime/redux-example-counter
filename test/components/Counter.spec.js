@@ -5,7 +5,8 @@ import Counter from '../../components/Counter'
 
 function setup(value = 0) {
   const actions = {
-    onIncrement: expect.createSpy()
+    onIncrement: expect.createSpy(),
+    onDecrement: expect.createSpy()
   }
 
   const component = shallow(
@@ -30,5 +31,11 @@ describe('Counter component', () => {
     const { buttons, actions } = setup()
     buttons.at(0).simulate('click')
     expect(actions.onIncrement).toHaveBeenCalled()
+  })
+
+  it('second button should call onDecrement', () => {
+    const { buttons, actions } = setup()
+    buttons.at(1).simulate('click')
+    expect(actions.onDecrement).toHaveBeenCalled()
   })
 })
